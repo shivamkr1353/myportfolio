@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --text: #0f172a;
+  --muted: #475569;
+  --line: #dbe3ef;
+  --surface: #ffffff;
+  --surface-muted: #f6f9ff;
+  --primary: #1a73e8;
+  --primary-strong: #0f5ec8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(26, 115, 232, 0.2), transparent 46%),
+    linear-gradient(180deg, #f8fbff 0%, #ffffff 38%, #f8fbff 100%);
+  color: var(--text);
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+}
+
+.top-glow {
+  background: radial-gradient(circle, rgba(26, 115, 232, 0.2), rgba(255, 255, 255, 0));
+  filter: blur(28px);
+}
+
+.surface-card {
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+::selection {
+  background: rgba(26, 115, 232, 0.23);
+}
+
+@media (max-width: 768px) {
+  .surface-card {
+    border-radius: 1.15rem;
+  }
+}

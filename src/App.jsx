@@ -1,0 +1,608 @@
+import { motion as Motion } from 'framer-motion'
+import {
+  ArrowRight,
+  ArrowUpRight,
+  BrainCircuit,
+  BriefcaseBusiness,
+  Cloud,
+  Code2,
+  Database,
+  GraduationCap,
+  Mail,
+  Phone,
+  Sparkles,
+  Workflow,
+} from 'lucide-react'
+
+const navItems = [
+  { label: 'About', href: '#about' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Contact', href: '#contact' },
+]
+
+const heroTags = ['Full Stack Engineering', 'AI Workflow Automation', 'Product-Focused Development']
+
+const quickStats = [
+  {
+    icon: BriefcaseBusiness,
+    value: '2 Internships',
+    label: 'Hands-on experience across web and AI domains',
+  },
+  {
+    icon: Database,
+    value: '30% Faster',
+    label: 'MongoDB query performance improvement in production',
+  },
+  {
+    icon: Workflow,
+    value: '40% Saved',
+    label: 'Reduced repetitive ETL workload through automation',
+  },
+  {
+    icon: Cloud,
+    value: 'CI/CD Ready',
+    label: 'Agile delivery with GitHub Actions and cloud tooling',
+  },
+]
+
+const storyBlocks = [
+  {
+    icon: Code2,
+    title: 'Build cleanly',
+    description:
+      'I design interfaces and APIs together so product behavior remains cohesive from browser to backend.',
+    detail: 'React, Node.js, Express, and production-minded architecture.',
+  },
+  {
+    icon: Database,
+    title: 'Optimize early',
+    description:
+      'I focus on query performance, data contracts, and predictable latency before bottlenecks appear.',
+    detail: 'Indexed queries, structured payloads, and consistent API patterns.',
+  },
+  {
+    icon: BrainCircuit,
+    title: 'Automate smartly',
+    description:
+      'I integrate LLM workflows where they create clear leverage for engineering and operations teams.',
+    detail: 'Prompt design, RAG experimentation, and pipeline insights.',
+  },
+]
+
+const experiences = [
+  {
+    role: 'Full Stack Web Developer (Remote)',
+    company: 'Highleap Media',
+    location: 'Ranchi, Jharkhand, India',
+    period: 'Jun 2025 - Aug 2025',
+    points: [
+      'Built product catalog and inventory pages for an electronics dealership platform using React.js and Node.js.',
+      'Designed RESTful APIs for search, filtering, and order management in a 4-5 engineer team.',
+      'Optimized MongoDB queries with indexing and projection, improving page-load performance by 30%.',
+      'Contributed to CI/CD pipelines through GitHub Actions in an Agile sprint workflow.',
+    ],
+  },
+  {
+    role: 'AI/ML Intern (Remote)',
+    company: 'a1 AI',
+    location: 'India',
+    period: 'May 2023 - May 2024',
+    points: [
+      'Built Python scripts for preprocessing and validating structured CSV datasets for AI pipelines.',
+      'Automated repetitive ETL tasks, reducing manual processing effort by 40%.',
+      'Assisted OpenAI API integrations and prompt engineering workflows for internal LLM tools.',
+      'Worked with RAG pipelines and vector databases including ChromaDB and FAISS.',
+    ],
+  },
+]
+
+const projects = [
+  {
+    title: 'LLM-Powered DevOps Assistant',
+    year: '2025',
+    highlight: 'Pipeline Intelligence',
+    description:
+      'Integrated LLM APIs with CI/CD pipelines to analyze build logs and generate actionable failure summaries.',
+    bullets: [
+      'Automated troubleshooting suggestions with prompt engineering patterns.',
+      'Reduced manual debugging loops for pipeline failures.',
+      'Built backend monitoring service with Python and REST APIs.',
+    ],
+    stack: ['Python', 'LLMs', 'Prompt Engineering', 'REST APIs'],
+    previewGradient: 'radial-gradient(circle at 12% 12%, rgba(26,115,232,0.28), rgba(255,255,255,0))',
+  },
+  {
+    title: 'Text2SQL - Natural Language to SQL Engine',
+    year: '2026',
+    highlight: 'Reliable Data Querying',
+    description:
+      'Built a backend engine that converts natural language requests into SQL for structured data retrieval.',
+    bullets: [
+      'Adapted a LangChain + OpenAI pattern to work with Gemini API.',
+      'Improved query quality through iterative prompt and schema tuning.',
+      'Validated generated SQL in MySQL Workbench for syntax and logic correctness.',
+    ],
+    stack: ['Python', 'LangChain', 'Gemini API', 'MySQL'],
+    previewGradient: 'radial-gradient(circle at 88% 10%, rgba(0,199,190,0.26), rgba(255,255,255,0))',
+  },
+  {
+    title: 'CareLink - Healthcare Management System',
+    year: '2026',
+    highlight: 'Full-Stack Product Delivery',
+    description:
+      'Developed a full-stack healthcare platform for secure appointment booking and patient-doctor workflows.',
+    bullets: [
+      'Implemented role-based authentication and scheduling dashboards.',
+      'Integrated Razorpay for online medical appointment payments.',
+      'Delivered appointment history and management experiences for users and doctors.',
+    ],
+    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Razorpay'],
+    previewGradient: 'radial-gradient(circle at 50% 0%, rgba(99,102,241,0.24), rgba(255,255,255,0))',
+  },
+]
+
+const skillGroups = [
+  {
+    heading: 'Languages',
+    items: ['C', 'C++', 'Python', 'JavaScript', 'TypeScript', 'SQL', 'HTML', 'CSS'],
+  },
+  {
+    heading: 'Frameworks & Libraries',
+    items: [
+      'React',
+      'Node.js',
+      'Express.js',
+      'Next.js',
+      'FastAPI',
+      'LangChain',
+      'LangGraph',
+      'Tailwind CSS',
+    ],
+  },
+  {
+    heading: 'AI & GenAI',
+    items: ['LLMs', 'RAG Pipelines', 'Prompt Engineering', 'ChromaDB', 'FAISS', 'OpenCV'],
+  },
+  {
+    heading: 'Cloud, DevOps & Databases',
+    items: [
+      'AWS',
+      'Docker',
+      'CI/CD',
+      'Cloud Build',
+      'Cloud Run',
+      'MongoDB',
+      'PostgreSQL',
+      'MySQL',
+      'Firebase',
+    ],
+  },
+]
+
+const contactLinks = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
+  { label: 'GitHub', href: 'https://github.com/' },
+  { label: 'LeetCode', href: 'https://leetcode.com/' },
+]
+
+const revealUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: (index = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.62,
+      delay: index * 0.07,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }),
+}
+
+function SectionHeader({ eyebrow, title, description, align = 'left' }) {
+  const alignClass = align === 'center' ? 'mx-auto text-center' : ''
+
+  return (
+    <div className={`max-w-3xl ${alignClass}`}>
+      <p className="text-xs font-semibold uppercase tracking-[0.23em] text-[var(--primary)]">{eyebrow}</p>
+      <h2 className="font-display mt-3 text-3xl leading-tight text-[var(--text)] sm:text-4xl md:text-5xl">
+        {title}
+      </h2>
+      <p className="mt-4 text-base leading-relaxed text-[var(--muted)] sm:text-lg">{description}</p>
+    </div>
+  )
+}
+
+function ProjectPreview({ gradient }) {
+  return (
+    <div className="relative mt-6 overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--surface-muted)] p-4">
+      <div className="pointer-events-none absolute inset-0" style={{ background: gradient }} />
+      <div className="relative">
+        <div className="mb-3 flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
+          <span>Interface Preview</span>
+          <span>v1</span>
+        </div>
+        <div className="space-y-2 rounded-xl border border-[var(--line)] bg-white p-3">
+          <div className="h-2.5 w-2/3 rounded-full bg-slate-200" />
+          <div className="h-2.5 w-full rounded-full bg-slate-100" />
+          <div className="h-2.5 w-10/12 rounded-full bg-slate-100" />
+          <div className="mt-3 grid grid-cols-3 gap-2">
+            <div className="h-14 rounded-lg bg-slate-100" />
+            <div className="h-14 rounded-lg bg-slate-100" />
+            <div className="h-14 rounded-lg bg-slate-100" />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function App() {
+  return (
+    <div className="relative overflow-hidden">
+      <div className="top-glow pointer-events-none absolute left-1/2 top-[-20rem] h-[38rem] w-[38rem] -translate-x-1/2 rounded-full" />
+
+      <header className="sticky top-0 z-40 border-b border-[var(--line)] bg-[color:rgba(248,250,252,0.88)] backdrop-blur-xl">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
+          <a href="#home" className="font-display text-lg tracking-tight text-[var(--text)] sm:text-xl">
+            Shivam Kumar
+          </a>
+          <nav className="hidden items-center gap-6 md:flex">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-sm font-medium text-[var(--muted)] transition hover:text-[var(--text)]"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+          <a
+            href="mailto:skumar60_be24@thapar.edu"
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--text)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[var(--primary-strong)]"
+          >
+            Contact
+            <ArrowRight size={16} />
+          </a>
+        </div>
+      </header>
+
+      <main className="mx-auto flex max-w-6xl flex-col gap-24 px-5 pb-24 pt-12 sm:px-8 sm:pt-20">
+        <section id="home" className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+          <Motion.div
+            initial="hidden"
+            animate="show"
+            variants={revealUp}
+            className="surface-card p-7 sm:p-10"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--primary)]">
+              Full Stack Engineer | AI Workflow Builder
+            </p>
+            <h1 className="font-display mt-4 text-4xl leading-[1.03] tracking-tight text-[var(--text)] sm:text-6xl">
+              Software crafted with product clarity and engineering depth.
+            </h1>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-[var(--muted)] sm:text-lg">
+              I am Shivam Kumar, a Computer Science student at Thapar Institute. I build polished
+              web experiences, reliable backend systems, and AI-assisted tools that solve practical
+              problems.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {heroTags.map((tag) => (
+                <span
+                  key={tag}
+                  className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--surface-muted)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]"
+                >
+                  <Sparkles size={14} className="text-[var(--primary)]" />
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--primary-strong)]"
+              >
+                View Projects
+                <ArrowRight size={16} />
+              </a>
+              <a
+                href="mailto:skumar60_be24@thapar.edu"
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-5 py-3 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--primary)] hover:text-[var(--primary-strong)]"
+              >
+                <Mail size={16} />
+                Email Me
+              </a>
+              <a
+                href="/Shivam_Resume.docx"
+                download
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] px-5 py-3 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--primary)] hover:text-[var(--primary-strong)]"
+              >
+                Download Resume
+              </a>
+            </div>
+          </Motion.div>
+
+          <Motion.div
+            initial="hidden"
+            animate="show"
+            custom={1}
+            variants={revealUp}
+            className="surface-card p-6 sm:p-8"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--primary)]">
+              Current Focus
+            </p>
+            <h3 className="font-display mt-3 text-3xl tracking-tight text-[var(--text)]">
+              Building from idea to production
+            </h3>
+            <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+              Internship-backed execution across modern web engineering and LLM-enhanced developer
+              workflows.
+            </p>
+            <ul className="mt-6 space-y-3 text-sm text-[var(--muted)] sm:text-base">
+              <li className="rounded-xl border border-[var(--line)] bg-[var(--surface-muted)] px-4 py-3">
+                Production-ready React and Node.js systems
+              </li>
+              <li className="rounded-xl border border-[var(--line)] bg-[var(--surface-muted)] px-4 py-3">
+                Prompt engineering and RAG exploration
+              </li>
+              <li className="rounded-xl border border-[var(--line)] bg-[var(--surface-muted)] px-4 py-3">
+                Cloud-first workflows and CI/CD automation
+              </li>
+            </ul>
+          </Motion.div>
+        </section>
+
+        <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {quickStats.map((item, index) => {
+            const Icon = item.icon
+            return (
+              <Motion.article
+                key={item.label}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.35 }}
+                custom={index}
+                variants={revealUp}
+                className="surface-card p-5"
+              >
+                <div className="mb-4 inline-flex rounded-xl bg-[var(--surface-muted)] p-2 text-[var(--primary)]">
+                  <Icon size={18} />
+                </div>
+                <p className="font-display text-2xl text-[var(--text)] sm:text-3xl">{item.value}</p>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">{item.label}</p>
+              </Motion.article>
+            )
+          })}
+        </section>
+
+        <section id="about" className="grid gap-6 lg:grid-cols-[0.94fr_1.06fr] lg:items-start">
+          <div className="surface-card p-7 sm:p-10 lg:sticky lg:top-24">
+            <SectionHeader
+              eyebrow="About"
+              title="An end-to-end engineering mindset"
+              description="I combine interface quality, backend reliability, and measurable optimization to ship products that feel both polished and practical."
+            />
+          </div>
+          <div className="space-y-4">
+            {storyBlocks.map((block, index) => {
+              const Icon = block.icon
+              return (
+                <Motion.article
+                  key={block.title}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, amount: 0.3 }}
+                  custom={index}
+                  variants={revealUp}
+                  className="surface-card p-6 sm:p-7"
+                >
+                  <div className="mb-4 inline-flex rounded-xl border border-[var(--line)] bg-[var(--surface-muted)] p-2.5 text-[var(--primary)]">
+                    <Icon size={18} />
+                  </div>
+                  <h3 className="font-display text-2xl text-[var(--text)]">{block.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+                    {block.description}
+                  </p>
+                  <p className="mt-3 text-sm font-semibold text-[var(--primary-strong)]">{block.detail}</p>
+                </Motion.article>
+              )
+            })}
+          </div>
+        </section>
+
+        <section id="experience" className="space-y-8">
+          <SectionHeader
+            eyebrow="Experience"
+            title="Internships with measurable impact"
+            description="Real-world experience in scalable web systems, automation, and AI-assisted workflows."
+          />
+          <div className="grid gap-5">
+            {experiences.map((item, index) => (
+              <Motion.article
+                key={item.role}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
+                custom={index}
+                variants={revealUp}
+                className="surface-card relative p-6 pl-8 sm:p-8 sm:pl-10"
+              >
+                <span className="absolute left-0 top-8 h-8 w-1 rounded-full bg-[var(--primary)]" />
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <h3 className="font-display text-2xl text-[var(--text)]">{item.role}</h3>
+                  <p className="rounded-full border border-[var(--line)] bg-[var(--surface-muted)] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[var(--muted)]">
+                    {item.period}
+                  </p>
+                </div>
+                <p className="mt-2 text-sm font-semibold text-[var(--primary-strong)]">
+                  {item.company} | {item.location}
+                </p>
+                <ul className="mt-4 space-y-2 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+                  {item.points.map((point) => (
+                    <li key={point} className="flex items-start gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--primary)]" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Motion.article>
+            ))}
+          </div>
+        </section>
+
+        <section id="projects" className="space-y-8">
+          <SectionHeader
+            eyebrow="Projects"
+            title="Selected work"
+            description="Project snapshots designed and built with strong execution across frontend, backend, and AI integration layers."
+          />
+          <div className="grid gap-6 lg:grid-cols-3">
+            {projects.map((project, index) => (
+              <Motion.article
+                key={project.title}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.25 }}
+                custom={index}
+                variants={revealUp}
+                className="surface-card flex h-full flex-col p-6"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--primary)]">
+                  {project.highlight}
+                </p>
+                <div className="mt-3 flex items-center justify-between gap-3">
+                  <h3 className="font-display text-2xl leading-tight text-[var(--text)]">{project.title}</h3>
+                  <span className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--muted)]">
+                    {project.year}
+                  </span>
+                </div>
+                <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+                  {project.description}
+                </p>
+                <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
+                  {project.bullets.map((bullet) => (
+                    <li key={bullet} className="flex items-start gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--primary)]" />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-full border border-[var(--line)] bg-[var(--surface-muted)] px-3 py-1 text-xs font-semibold text-[var(--muted)]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <ProjectPreview gradient={project.previewGradient} />
+                <a
+                  href="#contact"
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary-strong)] transition hover:text-[var(--text)]"
+                >
+                  Discuss this project
+                  <ArrowUpRight size={16} />
+                </a>
+              </Motion.article>
+            ))}
+          </div>
+        </section>
+
+        <section id="skills" className="space-y-8">
+          <SectionHeader
+            eyebrow="Skills"
+            title="Technology toolkit"
+            description="A practical stack for building product-grade experiences from interface to infrastructure."
+          />
+          <div className="grid gap-5 md:grid-cols-2">
+            {skillGroups.map((group, index) => (
+              <Motion.article
+                key={group.heading}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
+                custom={index}
+                variants={revealUp}
+                className="surface-card p-6"
+              >
+                <h3 className="font-display text-2xl text-[var(--text)]">{group.heading}</h3>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-[var(--line)] bg-[var(--surface-muted)] px-3 py-1 text-xs font-medium text-[var(--muted)]"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </Motion.article>
+            ))}
+          </div>
+        </section>
+
+        <section className="grid gap-5 lg:grid-cols-[1fr_1fr]">
+          <div id="education" className="surface-card p-7 sm:p-10">
+            <SectionHeader
+              eyebrow="Education"
+              title="Thapar Institute of Engineering and Technology"
+              description="B.E. in Computer Science Engineering | Expected Graduation: 2027"
+            />
+            <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--surface-muted)] px-4 py-2 text-sm font-semibold text-[var(--primary-strong)]">
+              <GraduationCap size={17} />
+              Core strengths: DSA, OOP, DBMS, OS
+            </div>
+          </div>
+
+          <div id="contact" className="surface-card p-7 sm:p-10">
+            <SectionHeader
+              eyebrow="Contact"
+              title="Open to internships and engineering collaborations"
+              description="If you are building modern web or AI products, I would love to contribute and learn with your team."
+            />
+            <div className="mt-6 grid gap-3">
+              <a
+                href="mailto:skumar60_be24@thapar.edu"
+                className="inline-flex items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--surface-muted)] px-4 py-3 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--primary)]"
+              >
+                <Mail size={17} className="text-[var(--primary)]" />
+                skumar60_be24@thapar.edu
+              </a>
+              <a
+                href="tel:+916201756559"
+                className="inline-flex items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--surface-muted)] px-4 py-3 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--primary)]"
+              >
+                <Phone size={17} className="text-[var(--primary)]" />
+                +91 62017 56559
+              </a>
+            </div>
+            <div className="mt-5 flex flex-wrap gap-3">
+              {contactLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full border border-[var(--line)] px-4 py-2 text-sm font-medium text-[var(--muted)] transition hover:border-[var(--primary)] hover:text-[var(--primary-strong)]"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="border-t border-[var(--line)] px-5 py-6 text-center text-sm text-[var(--muted)] sm:px-8">
+        Built with React, Tailwind CSS, and Framer Motion.
+      </footer>
+    </div>
+  )
+}
+
+export default App
