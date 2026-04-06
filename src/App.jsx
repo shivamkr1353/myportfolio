@@ -87,7 +87,8 @@ const experiences = [
   {
     role: 'AI/ML Intern (Remote)',
     company: 'a1 AI',
-    location: 'India',
+    website: 'https://www.a1-ai.com/',
+    location: 'Chesterfield, Missouri, USA',
     period: 'May 2023 - May 2024',
     points: [
       'Built Python scripts for preprocessing and validating structured CSV datasets for AI pipelines.',
@@ -97,6 +98,42 @@ const experiences = [
     ],
   },
 ]
+
+const internshipSpotlight = {
+  company: 'a1 AI (EAIVision)',
+  website: 'https://www.a1-ai.com/',
+  tagline: 'An AI Era Innovations',
+  summary:
+    'At a1 AI, I worked on practical AI workflow support from structured data preprocessing to OpenAI-assisted internal tooling and early-stage RAG experimentation.',
+  initiatives: [
+    'Prepared and validated CSV datasets to make downstream AI pipelines more reliable.',
+    'Automated repetitive ETL activities to reduce manual handling and increase consistency.',
+    'Supported prompt engineering and OpenAI API integration workflows for internal use cases.',
+  ],
+  impact: [
+    { metric: '40%', label: 'manual ETL effort reduced' },
+    { metric: 'LLM', label: 'internal OpenAI workflow contribution' },
+    { metric: 'RAG', label: 'hands-on vector retrieval exploration' },
+  ],
+}
+
+const highleapSpotlight = {
+  company: 'Highleap Media',
+  profile: 'https://www.linkedin.com/company/highleap-media/',
+  tagline: 'Full-Stack Web Delivery',
+  summary:
+    'At Highleap Media, I built product-facing interfaces and backend APIs for an electronics dealership platform with a focus on speed, reliability, and usability.',
+  initiatives: [
+    'Built product catalog and inventory experiences in React.js for day-to-day business operations.',
+    'Designed REST APIs for search, filtering, and order management in a collaborative engineering workflow.',
+    'Improved MongoDB query efficiency using indexing and projection to reduce response and page-load times.',
+  ],
+  impact: [
+    { metric: '30%', label: 'faster page-load performance' },
+    { metric: 'React + Node', label: 'end-to-end feature delivery' },
+    { metric: 'CI/CD', label: 'sprint-based delivery with GitHub Actions' },
+  ],
+}
 
 const projects = [
   {
@@ -182,9 +219,9 @@ const skillGroups = [
 ]
 
 const contactLinks = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
-  { label: 'GitHub', href: 'https://github.com/' },
-  { label: 'LeetCode', href: 'https://leetcode.com/' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/shivamkumar997386/' },
+  { label: 'GitHub', href: 'https://github.com/shivamkr1353' },
+  { label: 'LeetCode', href: 'https://leetcode.com/u/Shivam_cooddee/' },
 ]
 
 const revealUp = {
@@ -315,7 +352,7 @@ function App() {
                 Email Me
               </a>
               <a
-                href="/Shivam_Resume.docx"
+                href="/Shivam_Resume.pdf"
                 download
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] px-5 py-3 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--primary)] hover:text-[var(--primary-strong)]"
               >
@@ -448,9 +485,160 @@ function App() {
                     </li>
                   ))}
                 </ul>
+                {item.website && (
+                  <a
+                    href={item.website}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary-strong)] transition hover:text-[var(--text)]"
+                  >
+                    Visit Company Website
+                    <ArrowUpRight size={16} />
+                  </a>
+                )}
               </Motion.article>
             ))}
           </div>
+        </section>
+
+        <section id="internship-spotlight" className="space-y-8">
+          <SectionHeader
+            eyebrow="Internship Spotlight"
+            title="a1 AI: practical AI workflow contributions"
+            description="A focused snapshot of my internship work that combined data reliability, automation, and applied LLM experimentation."
+          />
+          <Motion.article
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={revealUp}
+            className="surface-card overflow-hidden p-0"
+          >
+            <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
+              <div
+                className="p-7 sm:p-10"
+                style={{
+                  background:
+                    'radial-gradient(circle at 20% 0%, rgba(26,115,232,0.16), rgba(255,255,255,0) 56%)',
+                }}
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--primary)]">
+                  {internshipSpotlight.tagline}
+                </p>
+                <h3 className="font-display mt-3 text-3xl leading-tight text-[var(--text)] sm:text-4xl">
+                  {internshipSpotlight.company}
+                </h3>
+                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+                  {internshipSpotlight.summary}
+                </p>
+                <a
+                  href={internshipSpotlight.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--primary-strong)]"
+                >
+                  Visit a1-ai.com
+                  <ArrowUpRight size={16} />
+                </a>
+
+                <ul className="mt-6 space-y-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+                  {internshipSpotlight.initiatives.map((initiative) => (
+                    <li key={initiative} className="flex items-start gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--primary)]" />
+                      <span>{initiative}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="border-t border-[var(--line)] bg-[var(--surface-muted)] p-7 sm:p-10 lg:border-l lg:border-t-0">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--primary)]">
+                  Key Outcomes
+                </p>
+                <div className="mt-4 grid gap-3">
+                  {internshipSpotlight.impact.map((entry) => (
+                    <div
+                      key={entry.label}
+                      className="rounded-2xl border border-[var(--line)] bg-white px-4 py-4"
+                    >
+                      <p className="font-display text-2xl text-[var(--text)]">{entry.metric}</p>
+                      <p className="mt-1 text-sm text-[var(--muted)]">{entry.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Motion.article>
+        </section>
+
+        <section id="internship-spotlight-highleap" className="space-y-8">
+          <SectionHeader
+            eyebrow="Internship Spotlight"
+            title="Highleap Media: full-stack product execution"
+            description="A second internship snapshot focused on shipping frontend and backend features with measurable performance gains."
+          />
+          <Motion.article
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={revealUp}
+            className="surface-card overflow-hidden p-0"
+          >
+            <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
+              <div
+                className="p-7 sm:p-10"
+                style={{
+                  background:
+                    'radial-gradient(circle at 20% 0%, rgba(12,148,82,0.16), rgba(255,255,255,0) 56%)',
+                }}
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--primary)]">
+                  {highleapSpotlight.tagline}
+                </p>
+                <h3 className="font-display mt-3 text-3xl leading-tight text-[var(--text)] sm:text-4xl">
+                  {highleapSpotlight.company}
+                </h3>
+                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+                  {highleapSpotlight.summary}
+                </p>
+                <a
+                  href={highleapSpotlight.profile}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--primary-strong)]"
+                >
+                  View Highleap on LinkedIn
+                  <ArrowUpRight size={16} />
+                </a>
+
+                <ul className="mt-6 space-y-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+                  {highleapSpotlight.initiatives.map((initiative) => (
+                    <li key={initiative} className="flex items-start gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--primary)]" />
+                      <span>{initiative}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="border-t border-[var(--line)] bg-[var(--surface-muted)] p-7 sm:p-10 lg:border-l lg:border-t-0">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--primary)]">
+                  Key Outcomes
+                </p>
+                <div className="mt-4 grid gap-3">
+                  {highleapSpotlight.impact.map((entry) => (
+                    <div
+                      key={entry.label}
+                      className="rounded-2xl border border-[var(--line)] bg-white px-4 py-4"
+                    >
+                      <p className="font-display text-2xl text-[var(--text)]">{entry.metric}</p>
+                      <p className="mt-1 text-sm text-[var(--muted)]">{entry.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Motion.article>
         </section>
 
         <section id="projects" className="space-y-8">
