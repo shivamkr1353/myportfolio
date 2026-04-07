@@ -352,11 +352,12 @@ function App() {
                 Email Me
               </a>
               <a
-                href="/Shivam_Resume.docx"
-                download
+                href="/Shivam_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] px-5 py-3 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--primary)] hover:text-[var(--primary-strong)]"
               >
-                Download Resume
+                View Resume
               </a>
             </div>
           </Motion.div>
