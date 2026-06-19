@@ -19,6 +19,7 @@ const navItems = [
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
+  { label: 'Achievements', href: '#certifications' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -75,6 +76,7 @@ const experiences = [
   {
     role: 'Full Stack Web Developer (Remote)',
     company: 'Highleap Media',
+    certificate: 'https://credsverse.com/credentials/c8d79fcb-9fe7-4cef-9bad-b42c6202dca1',
     location: 'Ranchi, Jharkhand, India',
     period: 'Jun 2025 - Aug 2025',
     points: [
@@ -120,6 +122,7 @@ const internshipSpotlight = {
 const highleapSpotlight = {
   company: 'Highleap Media',
   profile: 'https://www.linkedin.com/company/highleap-media/',
+  certificate: 'https://credsverse.com/credentials/c8d79fcb-9fe7-4cef-9bad-b42c6202dca1',
   tagline: 'Full-Stack Web Delivery',
   summary:
     'At Highleap Media, I built product-facing interfaces and backend APIs for an electronics dealership platform with a focus on speed, reliability, and usability.',
@@ -137,46 +140,36 @@ const highleapSpotlight = {
 
 const projects = [
   {
-    title: 'LLM-Powered DevOps Assistant',
+    title: 'DevOps Failure Analysis Platform with RAG',
     year: '2025',
-    highlight: 'Pipeline Intelligence',
+    highlight: 'AIOps & Log Analysis',
     description:
-      'Integrated LLM APIs with CI/CD pipelines to analyze build logs and generate actionable failure summaries.',
+      'Built a full-stack AIOps platform that processes CI/CD failure logs via GitHub Actions integration, utilizing a RAG pipeline for incident retrieval and analysis.',
     bullets: [
-      'Automated troubleshooting suggestions with prompt engineering patterns.',
-      'Reduced manual debugging loops for pipeline failures.',
-      'Built backend monitoring service with Python and REST APIs.',
+      'Built a full-stack AIOps platform using FastAPI and React that processes CI/CD failure logs via GitHub Actions integration, utilizing a RAG pipeline for incident retrieval and analysis.',
+      'Designed a resilient system with Docker containerization and persistent storage for incident history, ensuring reliability and scalability.',
     ],
-    stack: ['Python', 'LLMs', 'Prompt Engineering', 'REST APIs'],
+    stack: ['FastAPI', 'React', 'ChromaDB', 'Gemini API', 'Docker', 'RAG'],
+    github: 'https://github.com/shivamkr1353/llm-powered-devops-failure-analysis-system',
+    live: 'https://llm-powered-devops-failure-analysis.onrender.com',
+    image: '/devops_preview.png',
     previewGradient: 'radial-gradient(circle at 12% 12%, rgba(26,115,232,0.28), rgba(255,255,255,0))',
   },
   {
-    title: 'Text2SQL - Natural Language to SQL Engine',
+    title: 'AI Mock Interview',
     year: '2026',
-    highlight: 'Reliable Data Querying',
+    highlight: 'EdTech & AI Speech',
     description:
-      'Built a backend engine that converts natural language requests into SQL for structured data retrieval.',
+      'Architected a browser-based AI mock interview platform utilizing Gemini AI for dynamic question generation and Web Speech API for speech-to-text pipeline.',
     bullets: [
-      'Adapted a LangChain + OpenAI pattern to work with Gemini API.',
-      'Improved query quality through iterative prompt and schema tuning.',
-      'Validated generated SQL in MySQL Workbench for syntax and logic correctness.',
+      'Architected a browser-based AI mock interview platform utilizing Gemini AI for dynamic question generation tailored to user profiles, enhancing interview preparation.',
+      'Integrated a real-time speech-to-text pipeline using the Web Speech API, providing live transcription and feedback for improved user experience.',
     ],
-    stack: ['Python', 'LangChain', 'Gemini API', 'MySQL'],
+    stack: ['Next.js 14', 'Clerk', 'PostgreSQL', 'Gemini AI', 'Drizzle ORM'],
+    github: 'https://github.com/shivamkr1353/AI-Mock-Interview',
+    live: 'https://ai-mock-interview-seven-pi.vercel.app',
+    image: '/mock_interview_preview.png',
     previewGradient: 'radial-gradient(circle at 88% 10%, rgba(0,199,190,0.26), rgba(255,255,255,0))',
-  },
-  {
-    title: 'CareLink - Healthcare Management System',
-    year: '2026',
-    highlight: 'Full-Stack Product Delivery',
-    description:
-      'Developed a full-stack healthcare platform for secure appointment booking and patient-doctor workflows.',
-    bullets: [
-      'Implemented role-based authentication and scheduling dashboards.',
-      'Integrated Razorpay for online medical appointment payments.',
-      'Delivered appointment history and management experiences for users and doctors.',
-    ],
-    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Razorpay'],
-    previewGradient: 'radial-gradient(circle at 50% 0%, rgba(99,102,241,0.24), rgba(255,255,255,0))',
   },
 ]
 
@@ -193,17 +186,22 @@ const skillGroups = [
       'Express.js',
       'Next.js',
       'FastAPI',
-      'LangChain',
       'LangGraph',
       'Tailwind CSS',
     ],
   },
   {
     heading: 'AI & GenAI',
-    items: ['LLMs', 'RAG Pipelines', 'Prompt Engineering', 'ChromaDB', 'FAISS', 'OpenCV'],
+    items: [
+      'LLMs',
+      'RAG Pipelines',
+      'Prompt Engineering',
+      'Vector Databases (ChromaDB, FAISS)',
+      'OpenCV',
+    ],
   },
   {
-    heading: 'Cloud, DevOps & Databases',
+    heading: 'DevOps, Databases & Tools',
     items: [
       'AWS',
       'Docker',
@@ -214,6 +212,10 @@ const skillGroups = [
       'PostgreSQL',
       'MySQL',
       'Firebase',
+      'Git',
+      'GitHub',
+      'VS Code',
+      'Postman',
     ],
   },
 ]
@@ -251,7 +253,20 @@ function SectionHeader({ eyebrow, title, description, align = 'left' }) {
   )
 }
 
-function ProjectPreview({ gradient }) {
+function ProjectPreview({ image, title, gradient }) {
+  if (image) {
+    return (
+      <div className="relative mt-6 overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--surface-muted)] aspect-[16/10] flex items-center justify-center">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          loading="lazy"
+        />
+      </div>
+    )
+  }
+
   return (
     <div className="relative mt-6 overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--surface-muted)] p-4">
       <div className="pointer-events-none absolute inset-0" style={{ background: gradient }} />
@@ -486,17 +501,30 @@ function App() {
                     </li>
                   ))}
                 </ul>
-                {item.website && (
-                  <a
-                    href={item.website}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary-strong)] transition hover:text-[var(--text)]"
-                  >
-                    Visit Company Website
-                    <ArrowUpRight size={16} />
-                  </a>
-                )}
+                <div className="mt-5 flex flex-wrap gap-4">
+                  {item.website && (
+                    <a
+                      href={item.website}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary-strong)] transition hover:text-[var(--text)]"
+                    >
+                      Visit Company Website
+                      <ArrowUpRight size={16} />
+                    </a>
+                  )}
+                  {item.certificate && (
+                    <a
+                      href={item.certificate}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary-strong)] transition hover:text-[var(--text)]"
+                    >
+                      View Certificate
+                      <ArrowUpRight size={16} />
+                    </a>
+                  )}
+                </div>
               </Motion.article>
             ))}
           </div>
@@ -602,15 +630,28 @@ function App() {
                 <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--muted)] sm:text-base">
                   {highleapSpotlight.summary}
                 </p>
-                <a
-                  href={highleapSpotlight.profile}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--primary-strong)]"
-                >
-                  View Highleap on LinkedIn
-                  <ArrowUpRight size={16} />
-                </a>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a
+                    href={highleapSpotlight.profile}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-5 py-3 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--primary)] hover:text-[var(--primary-strong)]"
+                  >
+                    View Highleap on LinkedIn
+                    <ArrowUpRight size={16} />
+                  </a>
+                  {highleapSpotlight.certificate && (
+                    <a
+                      href={highleapSpotlight.certificate}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--primary-strong)]"
+                    >
+                      View Internship Certificate
+                      <ArrowUpRight size={16} />
+                    </a>
+                  )}
+                </div>
 
                 <ul className="mt-6 space-y-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
                   {highleapSpotlight.initiatives.map((initiative) => (
@@ -648,7 +689,7 @@ function App() {
             title="Selected work"
             description="Project snapshots designed and built with strong execution across frontend, backend, and AI integration layers."
           />
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-6 lg:grid-cols-2">
             {projects.map((project, index) => (
               <Motion.article
                 key={project.title}
@@ -689,17 +730,101 @@ function App() {
                     </span>
                   ))}
                 </div>
-                <ProjectPreview gradient={project.previewGradient} />
-                <a
-                  href="#contact"
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary-strong)] transition hover:text-[var(--text)]"
-                >
-                  Discuss this project
-                  <ArrowUpRight size={16} />
-                </a>
+                 <ProjectPreview image={project.image} title={project.title} gradient={project.previewGradient} />
+                <div className="mt-auto pt-6 border-t border-[var(--line)] flex items-center justify-between">
+                  <div className="flex gap-4">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-bold text-[var(--primary-strong)] transition hover:text-[var(--text)]"
+                      >
+                        GitHub
+                        <ArrowUpRight size={14} />
+                      </a>
+                    )}
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-bold text-[var(--primary-strong)] transition hover:text-[var(--text)]"
+                      >
+                        Live Site
+                        <ArrowUpRight size={14} />
+                      </a>
+                    )}
+                  </div>
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--muted)] transition hover:text-[var(--text)]"
+                  >
+                    Discuss
+                    <ArrowRight size={14} />
+                  </a>
+                </div>
               </Motion.article>
             ))}
           </div>
+        </section>
+
+        <section id="certifications" className="space-y-8">
+          <SectionHeader
+            eyebrow="Certifications & Achievements"
+            title="Recognition & hackathons"
+            description="Selected highlights from competitive engineering and hackathons."
+          />
+          <Motion.article
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={revealUp}
+            className="surface-card p-6 sm:p-8"
+          >
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="space-y-2">
+                <span className="inline-flex rounded-full bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-700 dark:text-amber-400">
+                  Meta PyTorch Hackathon Finalist
+                </span>
+                <h3 className="font-display text-2xl text-[var(--text)]">
+                  Top 800 Finalist (out of 31,000+ teams)
+                </h3>
+                <p className="text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+                  Developed <strong>API Drift Gym</strong> for the hackathon finale—an adversarial RL environment and fine-tuned agent (Qwen 0.5B + LoRA) that learns structured fault recovery to handle silent API schema drift, partial observability, and cascading failures.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3 whitespace-nowrap">
+                <a
+                  href="https://github.com/shivamkr1353/Meta_Hack_Round2"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--primary)] hover:text-[var(--primary-strong)]"
+                >
+                  Source Code
+                  <ArrowUpRight size={14} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/posts/shivamkumar997386_meta-pytorch-openenv-ugcPost-7461179188465754113-FMI-/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD3PAcIBGFlpEEQfcPLLQoY-mFZiSwciCYU"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--primary)] hover:text-[var(--primary-strong)]"
+                >
+                  LinkedIn Post
+                  <ArrowUpRight size={14} />
+                </a>
+                <a
+                  href="https://huggingface.co/spaces/shivamkr1353/api-drift-gym"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-4 py-2 text-sm font-bold text-white transition hover:bg-[var(--primary-strong)]"
+                >
+                  Live Demo
+                  <ArrowUpRight size={14} />
+                </a>
+              </div>
+            </div>
+          </Motion.article>
         </section>
 
         <section id="skills" className="space-y-8">
