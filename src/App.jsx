@@ -913,7 +913,8 @@ function App() {
       </main>
 
       <footer className="border-t border-[var(--line)] px-5 py-6 text-center text-sm text-[var(--muted)] sm:px-8">
-        Built with React, Tailwind CSS, and Framer Motion.
+        Designed & Developed with <span className="inline-block text-red-500 animate-pulse">❤️</span> by{' '}
+        <span className="font-semibold text-[var(--text)]">Shivam</span>
       </footer>
     </div>
   )
