@@ -785,7 +785,7 @@ function App() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="space-y-2">
                 <span className="inline-flex rounded-full bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-700 dark:text-amber-400">
-                  Meta PyTorch Hackathon Finalist
+                  Meta × PyTorch OpenEnv Hackathon Finalist
                 </span>
                 <h3 className="font-display text-2xl text-[var(--text)]">
                   Top 800 Finalist (out of 31,000+ teams)
