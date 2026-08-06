@@ -141,22 +141,7 @@ const highleapSpotlight = {
 
 const projects = [
   {
-    title: 'NLP-based Resume Parser & Matcher (Built from Scratch)',
-    highlight: 'NLP & Algorithm Engine',
-    description:
-      'Built a transparent resume-ranking engine where core NLP algorithms (TF-IDF, cosine similarity, Porter stemmer) are written entirely from scratch in Python with zero external NLP framework dependencies.',
-    bullets: [
-      'Architected a transparent resume-ranking engine writing core NLP algorithms (TF-IDF, cosine similarity, Porter stemmer) from scratch in Python with zero dependency on scikit-learn, spaCy, or NLTK.',
-      'Ranks candidates against job descriptions, extracts matched vs. missing skills, and visualizes exact mathematical scoring (TF/IDF matrices, dot products) via a Streamlit dashboard.',
-      'Validated numerical correctness against scikit-learn\'s standard implementation using a dedicated pytest test suite.',
-    ],
-    stack: ['Python', 'Streamlit', 'Plotly', 'pdfplumber', 'python-docx', 'pytest'],
-    github: 'https://github.com/shivamkr1353/NLP-based-Resume-Parser-Matcher-From-Scratch-',
-    live: 'https://nlp-based-resume-matching.streamlit.app/',
-    linkedin: 'https://www.linkedin.com/feed/update/urn:li:activity:7482443928508522496/',
-    previewGradient: 'radial-gradient(circle at 50% 50%, rgba(99,102,241,0.25), rgba(255,255,255,0))',
-  },
-  {
+    id: 'devops',
     title: 'DevOps Failure Analysis Platform with RAG',
     highlight: 'AIOps & Log Analysis',
     description:
@@ -172,6 +157,7 @@ const projects = [
     previewGradient: 'radial-gradient(circle at 12% 12%, rgba(26,115,232,0.28), rgba(255,255,255,0))',
   },
   {
+    id: 'interview',
     title: 'AI Mock Interview Platform',
     highlight: 'EdTech & AI Speech',
     description:
@@ -185,6 +171,24 @@ const projects = [
     live: 'https://ai-mock-interview-seven-pi.vercel.app',
     image: '/mock_interview_preview.png',
     previewGradient: 'radial-gradient(circle at 88% 10%, rgba(0,199,190,0.26), rgba(255,255,255,0))',
+  },
+  {
+    id: 'nlp-resume',
+    title: 'NLP-based Resume Parser & Matcher (Built from Scratch)',
+    highlight: 'NLP & Algorithm Engine',
+    description:
+      'Built a transparent resume-ranking engine where core NLP algorithms (TF-IDF, cosine similarity, Porter stemmer) are written entirely from scratch in Python with zero external NLP framework dependencies.',
+    bullets: [
+      'Architected a transparent resume-ranking engine writing core NLP algorithms (TF-IDF, cosine similarity, Porter stemmer) from scratch in Python with zero dependency on scikit-learn, spaCy, or NLTK.',
+      'Ranks candidates against job descriptions, extracts matched vs. missing skills, and visualizes exact mathematical scoring (TF/IDF matrices, dot products) via an interactive Streamlit dashboard.',
+      'Validated numerical correctness against scikit-learn\'s standard implementation using a dedicated pytest test suite.',
+    ],
+    stack: ['Python', 'Streamlit', 'Plotly', 'pdfplumber', 'python-docx', 'pytest'],
+    github: 'https://github.com/shivamkr1353/NLP-based-Resume-Parser-Matcher-From-Scratch-',
+    live: 'https://nlp-based-resume-matching.streamlit.app/',
+    linkedin: 'https://www.linkedin.com/feed/update/urn:li:activity:7482443928508522496/',
+    image: '/nlp_preview.png',
+    previewGradient: 'radial-gradient(circle at 50% 50%, rgba(99,102,241,0.25), rgba(255,255,255,0))',
   },
 ]
 
@@ -230,13 +234,13 @@ const contactLinks = [
 ]
 
 const revealUp = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 28 },
   show: (index = 0) => ({
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.62,
-      delay: index * 0.07,
+      duration: 0.75,
+      delay: index * 0.12,
       ease: [0.22, 1, 0.36, 1],
     },
   }),
@@ -715,7 +719,7 @@ function App() {
             description="Project snapshots designed and built with strong execution across frontend, backend, and AI integration layers."
           />
           <div className="grid gap-6 lg:grid-cols-2">
-            {projects.map((project, index) => (
+            {projects.slice(0, 2).map((project, index) => (
               <Motion.article
                 key={project.title}
                 initial="hidden"
@@ -777,17 +781,6 @@ function App() {
                         <ArrowUpRight size={14} />
                       </a>
                     )}
-                    {project.linkedin && (
-                      <a
-                        href={project.linkedin}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-bold text-[var(--primary-strong)] transition hover:text-[var(--text)]"
-                      >
-                        LinkedIn Post
-                        <ArrowUpRight size={14} />
-                      </a>
-                    )}
                   </div>
                   <a
                     href="#contact"
@@ -800,6 +793,105 @@ function App() {
               </Motion.article>
             ))}
           </div>
+
+          {projects[2] && (
+            <Motion.article
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.2 }}
+              custom={2}
+              variants={revealUp}
+              className="surface-card overflow-hidden p-6 sm:p-8 mt-6"
+            >
+              <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+                <div className="flex flex-col h-full justify-between">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--primary)]">
+                      {projects[2].highlight}
+                    </p>
+                    <h3 className="font-display mt-2 text-2xl sm:text-3xl leading-tight text-[var(--text)]">
+                      {projects[2].title}
+                    </h3>
+                    <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+                      {projects[2].description}
+                    </p>
+                    <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
+                      {projects[2].bullets.map((bullet) => (
+                        <li key={bullet} className="flex items-start gap-3">
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--primary)]" />
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {projects[2].stack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="rounded-full border border-[var(--line)] bg-[var(--surface-muted)] px-3 py-1 text-xs font-semibold text-[var(--muted)]"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mt-8 pt-6 border-t border-[var(--line)] flex flex-wrap items-center justify-between gap-4">
+                    <div className="flex flex-wrap gap-4">
+                      {projects[2].github && (
+                        <a
+                          href={projects[2].github}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm font-bold text-[var(--primary-strong)] transition hover:text-[var(--text)]"
+                        >
+                          GitHub
+                          <ArrowUpRight size={14} />
+                        </a>
+                      )}
+                      {projects[2].live && (
+                        <a
+                          href={projects[2].live}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm font-bold text-[var(--primary-strong)] transition hover:text-[var(--text)]"
+                        >
+                          Live Site
+                          <ArrowUpRight size={14} />
+                        </a>
+                      )}
+                      {projects[2].linkedin && (
+                        <a
+                          href={projects[2].linkedin}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm font-bold text-[var(--primary-strong)] transition hover:text-[var(--text)]"
+                        >
+                          LinkedIn Post
+                          <ArrowUpRight size={14} />
+                        </a>
+                      )}
+                    </div>
+                    <a
+                      href="#contact"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--muted)] transition hover:text-[var(--text)]"
+                    >
+                      Discuss
+                      <ArrowRight size={14} />
+                    </a>
+                  </div>
+                </div>
+
+                <div className="relative overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--surface-muted)] aspect-[16/10] flex items-center justify-center shadow-md">
+                  <img
+                    src={projects[2].image}
+                    alt={projects[2].title}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </Motion.article>
+          )}
         </section>
 
         <section id="certifications" className="space-y-8">
@@ -870,7 +962,7 @@ function App() {
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="space-y-2">
-                  <span className="inline-flex rounded-full bg-blue-500/10 px-3 py-1 text-xs font-semibold text-blue-700 dark:text-blue-400">
+                  <span className="inline-flex rounded-full bg-blue-500/10 px-3.5 py-1.5 text-sm font-bold text-blue-600 dark:text-blue-400">
                     Flipkart GRID 8.0 Semi-Finalist
                   </span>
                   <h3 className="font-display text-2xl text-[var(--text)]">
@@ -893,7 +985,7 @@ function App() {
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="space-y-2">
-                  <span className="inline-flex rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
+                  <span className="inline-flex rounded-full bg-emerald-500/10 px-3.5 py-1.5 text-sm font-bold text-emerald-600 dark:text-emerald-400">
                     Oracle Certification
                   </span>
                   <h3 className="font-display text-2xl text-[var(--text)]">
