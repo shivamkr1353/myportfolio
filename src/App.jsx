@@ -80,10 +80,10 @@ const experiences = [
     location: 'Ranchi, Jharkhand, India',
     period: 'Jun 2025 - Aug 2025',
     points: [
-      'Built product catalog and inventory pages for an electronics dealership platform using React.js and Node.js.',
-      'Designed RESTful APIs for search, filtering, and order management in a 4-5 engineer team.',
-      'Optimized MongoDB queries with indexing and projection, improving page-load performance by 30%.',
-      'Contributed to CI/CD pipelines through GitHub Actions in an Agile sprint workflow.',
+      'Built product catalog and inventory pages for an electronics dealership platform using React.js and Node.js, improving user experience and engagement.',
+      'Designed and implemented RESTful APIs for product search, filtering, and order management, collaborating with a 4–5 engineer team in an Agile sprint workflow.',
+      'Optimized MongoDB queries through indexing and projection, cutting page load time by 30%.',
+      'Set up and maintained CI/CD pipelines with GitHub Actions, streamlining deployment and version control practices.',
     ],
   },
   {
@@ -93,10 +93,10 @@ const experiences = [
     location: 'Chesterfield, Missouri, USA',
     period: 'May 2023 - May 2024',
     points: [
-      'Built Python scripts for preprocessing and validating structured CSV datasets for AI pipelines.',
-      'Automated repetitive ETL tasks, reducing manual processing effort by 40%.',
-      'Assisted OpenAI API integrations and prompt engineering workflows for internal LLM tools.',
-      'Worked with RAG pipelines and vector databases including ChromaDB and FAISS.',
+      'Integrated the OpenAI API and built prompt engineering workflows for internal LLM-based tools, directly relevant to generative AI application development.',
+      'Built RAG pipelines using vector databases (ChromaDB, FAISS) to power retrieval-augmented AI features.',
+      'Developed Python scripts for preprocessing and validating structured CSV datasets, improving data quality for AI pipeline inputs.',
+      'Automated ETL tasks, cutting manual processing effort by 40% and increasing operational efficiency.',
     ],
   },
 ]
@@ -144,10 +144,10 @@ const projects = [
     year: '2025',
     highlight: 'AIOps & Log Analysis',
     description:
-      'Built a full-stack AIOps platform that processes CI/CD failure logs via GitHub Actions integration, utilizing a RAG pipeline for incident retrieval and analysis.',
+      'Built a full-stack AIOps platform with FastAPI and React that ingests CI/CD failure logs via GitHub Actions integration and uses a RAG pipeline for incident retrieval and analysis.',
     bullets: [
-      'Built a full-stack AIOps platform using FastAPI and React that processes CI/CD failure logs via GitHub Actions integration, utilizing a RAG pipeline for incident retrieval and analysis.',
-      'Designed a resilient system with Docker containerization and persistent storage for incident history, ensuring reliability and scalability.',
+      'Built a full-stack AIOps platform with FastAPI and React that ingests CI/CD failure logs via GitHub Actions integration and uses a RAG pipeline for incident retrieval and analysis.',
+      'Containerized the system with Docker and added persistent storage for incident history, supporting reliable, scalable deployment.',
     ],
     stack: ['FastAPI', 'React', 'ChromaDB', 'Gemini API', 'Docker', 'RAG'],
     github: 'https://github.com/shivamkr1353/llm-powered-devops-failure-analysis-system',
@@ -156,14 +156,14 @@ const projects = [
     previewGradient: 'radial-gradient(circle at 12% 12%, rgba(26,115,232,0.28), rgba(255,255,255,0))',
   },
   {
-    title: 'AI Mock Interview',
+    title: 'AI Mock Interview Platform',
     year: '2026',
     highlight: 'EdTech & AI Speech',
     description:
-      'Architected a browser-based AI mock interview platform utilizing Gemini AI for dynamic question generation and Web Speech API for speech-to-text pipeline.',
+      'Architected a browser-based AI mock interview platform using Gemini AI to generate interview questions dynamically based on user profiles.',
     bullets: [
-      'Architected a browser-based AI mock interview platform utilizing Gemini AI for dynamic question generation tailored to user profiles, enhancing interview preparation.',
-      'Integrated a real-time speech-to-text pipeline using the Web Speech API, providing live transcription and feedback for improved user experience.',
+      'Architected a browser-based AI mock interview platform using Gemini AI to generate interview questions dynamically based on user profiles.',
+      'Integrated a real-time speech-to-text pipeline with the Web Speech API to provide live transcription and feedback.',
     ],
     stack: ['Next.js 14', 'Clerk', 'PostgreSQL', 'Gemini AI', 'Drizzle ORM'],
     github: 'https://github.com/shivamkr1353/AI-Mock-Interview',
@@ -176,47 +176,35 @@ const projects = [
 const skillGroups = [
   {
     heading: 'Languages',
-    items: ['C', 'C++', 'Python', 'JavaScript', 'TypeScript', 'SQL', 'HTML', 'CSS'],
+    items: ['Python', 'JavaScript', 'C', 'C++', 'SQL', 'HTML', 'CSS'],
   },
   {
-    heading: 'Frameworks & Libraries',
-    items: [
-      'React',
-      'Node.js',
-      'Express.js',
-      'Next.js',
-      'FastAPI',
-      'LangGraph',
-      'Tailwind CSS',
-    ],
+    heading: 'Frontend',
+    items: ['React.js', 'Next.js', 'Tailwind CSS', 'HTML', 'CSS'],
   },
   {
-    heading: 'AI & GenAI',
+    heading: 'Backend',
+    items: ['Node.js', 'Express.js', 'FastAPI'],
+  },
+  {
+    heading: 'Databases',
+    items: ['MongoDB', 'PostgreSQL', 'MySQL', 'Firebase'],
+  },
+  {
+    heading: 'AI / GenAI',
     items: [
       'LLMs',
       'RAG Pipelines',
       'Prompt Engineering',
       'Vector Databases (ChromaDB, FAISS)',
-      'OpenCV',
+      'OpenAI API',
+      'Gemini API',
+      'LangGraph',
     ],
   },
   {
-    heading: 'DevOps, Databases & Tools',
-    items: [
-      'AWS',
-      'Docker',
-      'CI/CD',
-      'Cloud Build',
-      'Cloud Run',
-      'MongoDB',
-      'PostgreSQL',
-      'MySQL',
-      'Firebase',
-      'Git',
-      'GitHub',
-      'VS Code',
-      'Postman',
-    ],
+    heading: 'Tools & Cloud',
+    items: ['Git', 'GitHub', 'Docker', 'Postman', 'VS Code'],
   },
 ]
 
@@ -773,58 +761,117 @@ function App() {
           <SectionHeader
             eyebrow="Certifications & Achievements"
             title="Recognition & hackathons"
-            description="Selected highlights from competitive engineering and hackathons."
+            description="Selected highlights from competitive engineering, hackathons, and industry certifications."
           />
-          <Motion.article
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={revealUp}
-            className="surface-card p-6 sm:p-8"
-          >
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div className="space-y-2">
-                <span className="inline-flex rounded-full bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-700 dark:text-amber-400">
-                  Meta × PyTorch OpenEnv Hackathon Finalist
-                </span>
-                <h3 className="font-display text-2xl text-[var(--text)]">
-                  Top 800 Finalist (out of 31,000+ teams)
-                </h3>
-                <p className="text-sm leading-relaxed text-[var(--muted)] sm:text-base">
-                  Developed <strong>API Drift Gym</strong> for the hackathon finale—an adversarial RL environment and fine-tuned agent (Qwen 0.5B + LoRA) that learns structured fault recovery to handle silent API schema drift, partial observability, and cascading failures.
-                </p>
+          <div className="grid gap-5">
+            <Motion.article
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={revealUp}
+              className="surface-card p-6 sm:p-8"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="space-y-2">
+                  <span className="inline-flex rounded-full bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-700 dark:text-amber-400">
+                    Meta × PyTorch OpenEnv Hackathon Finalist
+                  </span>
+                  <h3 className="font-display text-2xl text-[var(--text)]">
+                    Top 800 Finalist (out of 31,000+ teams)
+                  </h3>
+                  <p className="text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+                    Developed <strong>API Drift Gym</strong> for the hackathon finale—an adversarial RL environment and fine-tuned agent (Qwen 0.5B + LoRA) that learns structured fault recovery to handle silent API schema drift, partial observability, and cascading failures.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-3 whitespace-nowrap">
+                  <a
+                    href="https://github.com/shivamkr1353/Meta_Hack_Round2"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--primary)] hover:text-[var(--primary-strong)]"
+                  >
+                    Source Code
+                    <ArrowUpRight size={14} />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/posts/shivamkumar997386_meta-pytorch-openenv-ugcPost-7461179188465754113-FMI-/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD3PAcIBGFlpEEQfcPLLQoY-mFZiSwciCYU"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--primary)] hover:text-[var(--primary-strong)]"
+                  >
+                    LinkedIn Post
+                    <ArrowUpRight size={14} />
+                  </a>
+                  <a
+                    href="https://huggingface.co/spaces/shivamkr1353/api-drift-gym"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-4 py-2 text-sm font-bold text-white transition hover:bg-[var(--primary-strong)]"
+                  >
+                    Live Demo
+                    <ArrowUpRight size={14} />
+                  </a>
+                </div>
               </div>
-              <div className="flex flex-wrap gap-3 whitespace-nowrap">
-                <a
-                  href="https://github.com/shivamkr1353/Meta_Hack_Round2"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--primary)] hover:text-[var(--primary-strong)]"
-                >
-                  Source Code
-                  <ArrowUpRight size={14} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/posts/shivamkumar997386_meta-pytorch-openenv-ugcPost-7461179188465754113-FMI-/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD3PAcIBGFlpEEQfcPLLQoY-mFZiSwciCYU"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--primary)] hover:text-[var(--primary-strong)]"
-                >
-                  LinkedIn Post
-                  <ArrowUpRight size={14} />
-                </a>
-                <a
-                  href="https://huggingface.co/spaces/shivamkr1353/api-drift-gym"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-4 py-2 text-sm font-bold text-white transition hover:bg-[var(--primary-strong)]"
-                >
-                  Live Demo
-                  <ArrowUpRight size={14} />
-                </a>
+            </Motion.article>
+
+            <Motion.article
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
+              custom={1}
+              variants={revealUp}
+              className="surface-card p-6 sm:p-8"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="space-y-2">
+                  <span className="inline-flex rounded-full bg-blue-500/10 px-3 py-1 text-xs font-semibold text-blue-700 dark:text-blue-400">
+                    Flipkart GRID 8.0 Semi-Finalist
+                  </span>
+                  <h3 className="font-display text-2xl text-[var(--text)]">
+                    Semi-Finalist (Round 3) among 160,000+ Participants
+                  </h3>
+                  <p className="text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+                    Advanced to Round 3 in Flipkart GRID 8.0, a prestigious national tech competition evaluating advanced problem solving, engineering scale, and algorithmic competence.
+                  </p>
+                </div>
               </div>
-            </div>
-          </Motion.article>
+            </Motion.article>
+
+            <Motion.article
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
+              custom={2}
+              variants={revealUp}
+              className="surface-card p-6 sm:p-8"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="space-y-2">
+                  <span className="inline-flex rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
+                    Oracle Certification
+                  </span>
+                  <h3 className="font-display text-2xl text-[var(--text)]">
+                    Agentic AI Certified Foundations Associate
+                  </h3>
+                  <p className="text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+                    Certified by Oracle in foundational concepts, workflows, architecture, and practical implementations of Agentic AI systems.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-3 whitespace-nowrap">
+                  <a
+                    href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=45AA2AE137B4762893B683546385D7F50C7A98982220582E972BC15FE1713E6D"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-4 py-2 text-sm font-bold text-white transition hover:bg-[var(--primary-strong)]"
+                  >
+                    View Certificate
+                    <ArrowUpRight size={14} />
+                  </a>
+                </div>
+              </div>
+            </Motion.article>
+          </div>
         </section>
 
         <section id="skills" className="space-y-8">
