@@ -90,6 +90,7 @@ const experiences = [
     role: 'AI/ML Intern (Remote)',
     company: 'a1 AI',
     website: 'https://www.a1-ai.com/',
+    blog: 'https://www.a1-ai.com/blogs/DevSecOps',
     location: 'Chesterfield, Missouri, USA',
     period: 'May 2023 - May 2024',
     points: [
@@ -140,8 +141,23 @@ const highleapSpotlight = {
 
 const projects = [
   {
+    title: 'NLP-based Resume Parser & Matcher (Built from Scratch)',
+    highlight: 'NLP & Algorithm Engine',
+    description:
+      'Built a transparent resume-ranking engine where core NLP algorithms (TF-IDF, cosine similarity, Porter stemmer) are written entirely from scratch in Python with zero external NLP framework dependencies.',
+    bullets: [
+      'Architected a transparent resume-ranking engine writing core NLP algorithms (TF-IDF, cosine similarity, Porter stemmer) from scratch in Python with zero dependency on scikit-learn, spaCy, or NLTK.',
+      'Ranks candidates against job descriptions, extracts matched vs. missing skills, and visualizes exact mathematical scoring (TF/IDF matrices, dot products) via a Streamlit dashboard.',
+      'Validated numerical correctness against scikit-learn\'s standard implementation using a dedicated pytest test suite.',
+    ],
+    stack: ['Python', 'Streamlit', 'Plotly', 'pdfplumber', 'python-docx', 'pytest'],
+    github: 'https://github.com/shivamkr1353/NLP-based-Resume-Parser-Matcher-From-Scratch-',
+    live: 'https://nlp-based-resume-matching.streamlit.app/',
+    linkedin: 'https://www.linkedin.com/feed/update/urn:li:activity:7482443928508522496/',
+    previewGradient: 'radial-gradient(circle at 50% 50%, rgba(99,102,241,0.25), rgba(255,255,255,0))',
+  },
+  {
     title: 'DevOps Failure Analysis Platform with RAG',
-    year: '2025',
     highlight: 'AIOps & Log Analysis',
     description:
       'Built a full-stack AIOps platform with FastAPI and React that ingests CI/CD failure logs via GitHub Actions integration and uses a RAG pipeline for incident retrieval and analysis.',
@@ -157,7 +173,6 @@ const projects = [
   },
   {
     title: 'AI Mock Interview Platform',
-    year: '2026',
     highlight: 'EdTech & AI Speech',
     description:
       'Architected a browser-based AI mock interview platform using Gemini AI to generate interview questions dynamically based on user profiles.',
@@ -501,6 +516,17 @@ function App() {
                       <ArrowUpRight size={16} />
                     </a>
                   )}
+                  {item.blog && (
+                    <a
+                      href={item.blog}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary-strong)] transition hover:text-[var(--text)]"
+                    >
+                      My Blogs at a1 AI
+                      <ArrowUpRight size={16} />
+                    </a>
+                  )}
                   {item.certificate && (
                     <a
                       href={item.certificate}
@@ -548,15 +574,26 @@ function App() {
                 <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--muted)] sm:text-base">
                   {internshipSpotlight.summary}
                 </p>
-                <a
-                  href={internshipSpotlight.website}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--primary-strong)]"
-                >
-                  Visit a1-ai.com
-                  <ArrowUpRight size={16} />
-                </a>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a
+                    href={internshipSpotlight.website}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--primary-strong)]"
+                  >
+                    Visit a1-ai.com
+                    <ArrowUpRight size={16} />
+                  </a>
+                  <a
+                    href="https://www.a1-ai.com/blogs/DevSecOps"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-5 py-3 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--primary)] hover:text-[var(--primary-strong)]"
+                  >
+                    My Blogs at a1 AI
+                    <ArrowUpRight size={16} />
+                  </a>
+                </div>
 
                 <ul className="mt-6 space-y-3 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
                   {internshipSpotlight.initiatives.map((initiative) => (
@@ -693,9 +730,6 @@ function App() {
                 </p>
                 <div className="mt-3 flex items-center justify-between gap-3">
                   <h3 className="font-display text-2xl leading-tight text-[var(--text)]">{project.title}</h3>
-                  <span className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--muted)]">
-                    {project.year}
-                  </span>
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
                   {project.description}
@@ -720,7 +754,7 @@ function App() {
                 </div>
                  <ProjectPreview image={project.image} title={project.title} gradient={project.previewGradient} />
                 <div className="mt-auto pt-6 border-t border-[var(--line)] flex items-center justify-between">
-                  <div className="flex gap-4">
+                  <div className="flex flex-wrap gap-4">
                     {project.github && (
                       <a
                         href={project.github}
@@ -740,6 +774,17 @@ function App() {
                         className="inline-flex items-center gap-1.5 text-sm font-bold text-[var(--primary-strong)] transition hover:text-[var(--text)]"
                       >
                         Live Site
+                        <ArrowUpRight size={14} />
+                      </a>
+                    )}
+                    {project.linkedin && (
+                      <a
+                        href={project.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-bold text-[var(--primary-strong)] transition hover:text-[var(--text)]"
+                      >
+                        LinkedIn Post
                         <ArrowUpRight size={14} />
                       </a>
                     )}
@@ -773,11 +818,11 @@ function App() {
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="space-y-2">
-                  <span className="inline-flex rounded-full bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-700 dark:text-amber-400">
+                  <span className="inline-flex rounded-full bg-blue-500/10 px-3.5 py-1.5 text-sm font-bold text-blue-600 dark:text-blue-400">
                     Meta × PyTorch OpenEnv Hackathon Finalist
                   </span>
                   <h3 className="font-display text-2xl text-[var(--text)]">
-                    Top 800 Finalist (out of 31,000+ teams)
+                    Finalist (out of 31,000+ teams)
                   </h3>
                   <p className="text-sm leading-relaxed text-[var(--muted)] sm:text-base">
                     Developed <strong>API Drift Gym</strong> for the hackathon finale—an adversarial RL environment and fine-tuned agent (Qwen 0.5B + LoRA) that learns structured fault recovery to handle silent API schema drift, partial observability, and cascading failures.
