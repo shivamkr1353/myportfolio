@@ -319,7 +319,7 @@ function App() {
             ))}
           </nav>
           <a
-            href="mailto:skumar60_be24@thapar.edu"
+            href="mailto:shivamkr997386@gmail.com"
             className="inline-flex items-center gap-2 rounded-full bg-[var(--text)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[var(--primary-strong)]"
           >
             Contact
@@ -367,7 +367,7 @@ function App() {
                 <ArrowRight size={16} />
               </a>
               <a
-                href="mailto:skumar60_be24@thapar.edu"
+                href="mailto:shivamkr997386@gmail.com"
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-5 py-3 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--primary)] hover:text-[var(--primary-strong)]"
               >
                 <Mail size={16} />
@@ -1065,11 +1065,11 @@ function App() {
             />
             <div className="mt-6 grid gap-3">
               <a
-                href="mailto:skumar60_be24@thapar.edu"
+                href="mailto:shivamkr997386@gmail.com"
                 className="inline-flex items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--surface-muted)] px-4 py-3 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--primary)]"
               >
                 <Mail size={17} className="text-[var(--primary)]" />
-                skumar60_be24@thapar.edu
+                shivamkr997386@gmail.com
               </a>
               <a
                 href="tel:+916201756559"
