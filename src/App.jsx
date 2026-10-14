@@ -224,7 +224,7 @@ const skillGroups = [
   },
   {
     heading: 'Tools & Cloud',
-    items: ['Git', 'GitHub', 'Docker', 'Postman', 'VS Code'],
+    items: ['Git', 'GitHub', 'Docker', 'AWS', 'Postman', 'VS Code'],
   },
 ]
 
