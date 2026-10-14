@@ -1,4 +1,5 @@
 import { motion as Motion } from 'framer-motion'
+import VisitorCounter from './VisitorCounter'
 import {
   ArrowRight,
   ArrowUpRight,
@@ -1097,8 +1098,13 @@ function App() {
       </main>
 
       <footer className="border-t border-[var(--line)] px-5 py-6 text-center text-sm text-[var(--muted)] sm:px-8">
-        Designed & Developed with <span className="inline-block text-red-500 animate-pulse">❤️</span> by{' '}
-        <span className="font-semibold text-[var(--text)]">Shivam</span>
+        <p>
+          Designed & Developed with <span className="inline-block text-red-500 animate-pulse">❤️</span> by{' '}
+          <span className="font-semibold text-[var(--text)]">Shivam</span>
+        </p>
+        <div className="mt-2 text-xs text-[var(--muted)]">
+          <VisitorCounter />
+        </div>
       </footer>
     </div>
   )
