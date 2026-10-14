@@ -5,9 +5,7 @@ export default function VisitorCounter() {
     const [count, setCount] = useState(null);
 
     useEffect(() => {
-        fetch(
-            "https://wpfu892qc5.execute-api.eu-north-1.amazonaws.com/visitors"
-        )
+        fetch(import.meta.env.VITE_VISITOR_API_URL)
             .then((response) => {
                 if (!response.ok) throw new Error("API request failed");
                 return response.json();
